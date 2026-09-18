@@ -1,0 +1,10 @@
+node_modules/
+dist/
+tmp/
+config.local.json
+private/
+data/
+.env
+.env.*
+!.env.example
+.DS_Store

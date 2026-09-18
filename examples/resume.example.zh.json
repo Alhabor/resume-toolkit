@@ -1,0 +1,88 @@
+{
+  "basics": {
+    "name": "陈明",
+    "label": "数据分析与产品运营",
+    "email": "ming.chen@example.com",
+    "phone": "+86 000 0000 0000",
+    "url": "https://example.com/zh",
+    "location": {
+      "city": "上海",
+      "countryCode": "CN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/example"
+      }
+    ]
+  },
+  "x_resumeSystem": {
+    "language": "zh",
+    "sectionTitles": {
+      "education": "教育背景",
+      "work": "工作经历",
+      "projects": "项目经历",
+      "skills": "技能",
+      "links": "作品与联系"
+    },
+    "qrCodes": [
+      { "label": "作品", "url": "https://example.com/zh" },
+      { "label": "联系", "url": "https://example.com/contact" }
+    ]
+  },
+  "summary": "专注于数据分析、业务运营与产品协作，能够将业务问题转化为清晰的数据分析和执行方案。",
+  "work": [
+    {
+      "name": "示例数据工作室",
+      "position": "数据运营实习生",
+      "location": "上海",
+      "startDate": "2025-06-01",
+      "endDate": "2025-08-31",
+      "highlights": [
+        "数据质量：使用 Python 和 SQL 清理并核对周期性业务数据，形成稳定的周度分析流程。",
+        "报表自动化：搭建可复用的数据校验步骤，缩短团队生成和复核运营报表的时间。"
+      ]
+    },
+    {
+      "name": "示例产品工作室",
+      "position": "产品分析项目",
+      "location": "远程",
+      "startDate": "2024-09-01",
+      "endDate": "2025-01-31",
+      "highlights": [
+        "用户分析：分析产品事件数据，识别留存和转化中的主要变化，并向团队汇报发现。"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "示例大学",
+      "studyType": "硕士",
+      "area": "数据分析",
+      "location": "上海",
+      "startDate": "2025-09-01",
+      "endDate": "2027-05-31",
+      "courses": ["统计分析", "数据库系统", "产品分析"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "科技岗位需求分析",
+      "description": "构建小型数据流程，整理公开岗位信息并总结技能需求。",
+      "keywords": ["Python", "pandas", "SQL"],
+      "highlights": [
+        "数据整理：将非结构化招聘文本整理为可分析字段，归纳不同岗位反复出现的技能要求。"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "数据分析",
+      "keywords": ["SQL", "Python", "pandas", "数据质量"]
+    },
+    {
+      "name": "开发工具",
+      "keywords": ["Git", "Jupyter", "数据可视化"]
+    }
+  ]
+}

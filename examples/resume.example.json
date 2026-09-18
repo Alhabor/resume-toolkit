@@ -1,0 +1,88 @@
+{
+  "basics": {
+    "name": "Alex Chen",
+    "label": "Data Analyst",
+    "email": "alex@example.com",
+    "phone": "+86 000 0000 0000",
+    "url": "https://example.com/en",
+    "location": {
+      "city": "Shanghai",
+      "countryCode": "CN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/example"
+      }
+    ]
+  },
+  "x_resumeSystem": {
+    "language": "en",
+    "sectionTitles": {
+      "education": "Education",
+      "work": "Experience",
+      "projects": "Projects",
+      "skills": "Skills",
+      "links": "Links"
+    },
+    "qrCodes": [
+      { "label": "Portfolio", "url": "https://example.com/en" },
+      { "label": "Contact", "url": "https://example.com/contact" }
+    ]
+  },
+  "summary": "M.S. candidate focused on data analysis, data operations, and reliable business reporting.",
+  "work": [
+    {
+      "name": "Example Data Lab",
+      "position": "Data Operations Intern",
+      "location": "Shanghai",
+      "startDate": "2025-06-01",
+      "endDate": "2025-08-31",
+      "highlights": [
+        "Cleaned and validated recurring operational data with Python and SQL.",
+        "Built a repeatable quality-check workflow that made weekly reporting easier to review."
+      ]
+    },
+    {
+      "name": "Example Product Studio",
+      "position": "Product Analytics Project",
+      "location": "Remote",
+      "startDate": "2024-09-01",
+      "endDate": "2025-01-31",
+      "highlights": [
+        "Analyzed user events to identify retention and conversion patterns.",
+        "Presented findings with a concise dashboard and written recommendations."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "studyType": "M.S.",
+      "area": "Data Analytics and Business Computing",
+      "location": "Shanghai",
+      "startDate": "2025-09-01",
+      "endDate": "2027-05-31"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Entry-Level Tech Job Market Analytics",
+      "description": "A small pipeline for extracting skills and role patterns from public job descriptions.",
+      "keywords": ["Python", "pandas", "SQL"],
+      "highlights": [
+        "Structured messy job-posting text into analyzable fields and summarized recurring skill requirements."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data",
+      "keywords": ["SQL", "Python", "pandas", "Data Quality"]
+    },
+    {
+      "name": "Tools",
+      "keywords": ["Git", "Jupyter", "Dashboarding"]
+    }
+  ]
+}
