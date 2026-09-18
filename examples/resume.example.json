@@ -24,11 +24,7 @@
       "projects": "Projects",
       "skills": "Skills",
       "links": "Links"
-    },
-    "qrCodes": [
-      { "label": "Portfolio", "url": "https://example.com/en" },
-      { "label": "Contact", "url": "https://example.com/contact" }
-    ]
+    }
   },
   "summary": "M.S. candidate focused on data analysis, data operations, and reliable business reporting.",
   "work": [

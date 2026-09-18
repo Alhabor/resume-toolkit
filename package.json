@@ -10,6 +10,9 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "init": "node scripts/init.mjs",
+    "build:duplex": "node scripts/build-duplex.mjs",
     "build:example": "node scripts/build.mjs --input examples/resume.example.json --output dist/example",
     "check:example": "node scripts/check.mjs --input examples/resume.example.json --pdf dist/example.pdf",
     "build:example:zh": "node scripts/build.mjs --input examples/resume.example.zh.json --output dist/example-zh",

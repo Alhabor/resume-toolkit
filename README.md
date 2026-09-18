@@ -6,15 +6,17 @@
 
 - 按证据整理个人经历，记录数据来源和待确认事项，不替用户编造事实。
 - 从英文或中文 JSON Resume 数据生成 A4 简历 PDF 与 PNG 预览。
-- 可配置二维码链接，构建时自动生成 QR SVG；最多两个二维码。
+- 可选配置二维码链接，构建时自动生成 QR SVG；最多两个二维码。
 - 检查 JSON Schema、单页输出、PDF 可提取文本和关键字段。
+- 从零创建 private 工作区，并检查本机依赖。
+- 一键构建中文第一页、英文第二页的双面打印 PDF。
 - 提供 `skills/resume-workflow/SKILL.md`，供 Codex 或其他能读取本地文件、运行命令的 Agent 作为工作流说明。
 
 ## 环境要求
 
 - Node.js 20 或更高版本
 - Typst
-- Poppler 命令行工具（`pdftoppm`、`pdfinfo`、`pdftotext`）
+- Poppler 命令行工具（`pdftoppm`、`pdfinfo`、`pdftotext`、`pdfunite`）
 
 本项目已在 macOS 上运行示例验收。中文字体取决于操作系统；若 PDF 缺字，请安装适合的简体中文字体，并在 `templates/resume.typ` 中选择该字体。
 
@@ -28,6 +30,7 @@ brew install node typst poppler
 
 ```bash
 npm ci
+npm run doctor
 npm run smoke
 ```
 
@@ -35,13 +38,14 @@ npm run smoke
 
 从示例开始建立自己的资料：
 
-```bash
-mkdir -p private
-cp examples/resume.example.json private/resume-en.json
-cp examples/resume.example.zh.json private/resume-zh.json
-```
+~~~bash
+npm run init
+~~~
 
-把个人原始材料放在 `private/` 中，参考 `templates/profile-intake.md` 与 Agent 工作流整理内容。`private/` 已在 `.gitignore` 中排除。
+init 会创建 private/、private/source/、资料采集表、证据台账和两份示例 JSON。
+它不会覆盖已有文件；需要明确覆盖时才使用 npm run init -- --force。
+把个人原始材料放在 private/source/ 中，参考 docs/FROM_ZERO.md 和
+docs/REVISION_WORKFLOW.md 整理内容。private/ 已在 .gitignore 中排除。
 
 构建并检查自己的简历：
 
@@ -54,6 +58,22 @@ npm run check -- --input private/resume-zh.json --pdf dist/resume-zh.pdf
 ```
 
 每次构建会同时输出 `.pdf` 和 `.png`。PDF 是生成产物；修改 JSON 内容或 Typst 模板后重新生成，不要直接编辑 PDF。
+
+如果需要双面打印版：
+
+~~~bash
+npm run build:duplex
+~~~
+
+默认输出 dist/resume-duplex.pdf，第一页为中文，第二页为英文，同时输出两页 PNG
+预览。也可以指定自己的文件：
+
+~~~bash
+npm run build:duplex -- \
+  --zh-input private/resume-zh.json \
+  --en-input private/resume-en.json \
+  --output dist/my-resume
+~~~
 
 ## 数据格式
 
@@ -106,3 +126,19 @@ git check-ignore private/resume-en.json
 - 当前模板为一页 A4 中英文简历，不负责求职网站投递或招聘状态管理。
 - 页面是否适合特定行业、ATS 或打印要求，需要由使用者检查并调整。
 - Agent 可以起草和修改材料；用户确认最终事实与导出版本。
+
+## Agent-first 使用入口
+
+完整入口说明见 docs/START_HERE.md。从零制作的资料采集和证据流程见
+docs/FROM_ZERO.md，批注迭代规则见 docs/REVISION_WORKFLOW.md。
+
+常用命令：
+
+~~~bash
+npm run doctor
+npm run init
+npm run build:duplex
+~~~
+
+init 只创建缺失的 private 工作文件，不会覆盖已有内容。二维码属于可选扩展；
+默认示例不包含二维码，只有 JSON 明确填写二维码目标时才会生成。

@@ -20,6 +20,11 @@ const info = spawnSync("pdfinfo", [pdfPath], { encoding: "utf8" });
 if (info.error) throw info.error;
 if (info.status !== 0) throw new Error(info.stderr || "pdfinfo failed");
 const pages = Number(info.stdout.match(/^Pages:\s+(\d+)/m)?.[1] ?? NaN);
+const width = Number(info.stdout.match(/^Page size:\s+([\d.]+)/m)?.[1] ?? NaN);
+const height = Number(info.stdout.match(/^Page size:\s+[\d.]+\s+x\s+([\d.]+)/m)?.[1] ?? NaN);
+if (Math.abs(width - 595.28) > 1 || Math.abs(height - 841.89) > 1) {
+  throw new Error("Expected A4 page size, got " + width + " x " + height + " pt");
+}
 if (pages !== 1) throw new Error(`Expected 1 page, got ${pages}`);
 
 const textResult = spawnSync("pdftotext", ["-layout", pdfPath, "-"], { encoding: "utf8" });

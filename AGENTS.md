@@ -26,3 +26,13 @@ This repository contains reusable resume workflow instructions, source examples,
 - For layout changes, inspect both rendered language previews and fix clipping, overlap, missing glyphs, and poor page balance before reporting completion.
 - Report the generated paths, page count, text extraction result, and any unresolved factual or visual issue.
 - Do not submit job applications or change external recruiting records.
+
+## Agent entry and layer boundaries
+
+At the start of a task, read README.md and skills/resume-workflow/SKILL.md.
+Use docs/START_HERE.md as the handoff entry point for another Agent.
+Keep evidence and facts, language-specific resume content, and presentation template
+as separate layers. QR codes are optional and may only be added from explicit user input.
+
+Use npm run init for a new private workspace, npm run doctor for dependency diagnosis,
+and npm run build:duplex for a Chinese-page-one/English-page-two print artifact.

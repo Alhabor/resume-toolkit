@@ -56,3 +56,15 @@ Read each comment as feedback about a specific claim or design choice. Decide wh
 ## 7. Deliver
 
 Link the generated PDF and, when useful, its PNG preview. State language, page count, the checks completed, and unresolved questions. Do not claim a QR code, external URL, or printer behavior was tested unless it was actually checked.
+
+## Toolkit layer boundaries
+
+Keep three layers separate:
+
+1. Evidence and facts in the private working area;
+2. Chinese and English resume content in separate JSON files;
+3. Shared visual formatting in the Typst template.
+
+Use npm run init to scaffold the private working area. Use npm run doctor to diagnose
+local dependencies. Use npm run build:duplex when the user requests Chinese on page one
+and English on page two. QR codes are optional metadata and must never be inferred.

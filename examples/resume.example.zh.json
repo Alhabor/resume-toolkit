@@ -24,11 +24,7 @@
       "projects": "项目经历",
       "skills": "技能",
       "links": "作品与联系"
-    },
-    "qrCodes": [
-      { "label": "作品", "url": "https://example.com/zh" },
-      { "label": "联系", "url": "https://example.com/contact" }
-    ]
+    }
   },
   "summary": "专注于数据分析、业务运营与产品协作，能够将业务问题转化为清晰的数据分析和执行方案。",
   "work": [
