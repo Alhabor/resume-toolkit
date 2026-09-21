@@ -108,18 +108,20 @@ Agent 应先读取仓库根目录的 `AGENTS.md` 和 `skills/resume-workflow/SKI
 
 ## 隐私与 GitHub
 
-本仓库默认作为 Private 仓库分发。GitHub 私有仓库链接只对仓库所有者和被邀请的协作者开放；朋友需要用自己的 GitHub 账号接受邀请后才能克隆。每位使用者应在本地 `private/` 保存个人资料，并且只分享工具代码，不分享个人简历数据。
+本仓库只包含工具代码、模板、虚构示例和工作流说明，不包含任何真实简历资料。它可以作为公开仓库分享；没有 GitHub 账号的使用者也可以在仓库页面选择 **Code → Download ZIP** 下载后使用，不需要登录 GitHub。
+
+每位使用者都应在本地 `private/` 保存自己的原始材料、证据台账和简历 JSON。`private/` 已被 Git 忽略，不要把真实简历、身份证件、私人联系方式、二维码图像、API 密钥或招聘账号信息放入已跟踪文件。
 
 排版、PDF 导出与二维码生成在本地完成。如果使用云端 AI Agent，原始材料是否会传到模型服务由该 Agent 和服务商的数据设置决定；本工具不承诺云端 Agent 的推理过程离线运行。
 
-仓库中的演示姓名、邮箱、学校、公司、经历和链接均为虚构样例。提交前请检查：
+仓库中的演示姓名、邮箱、学校、公司、经历和链接均为虚构样例。公开分享前请检查：
 
 ```bash
 git status --short
 git check-ignore private/resume-en.json
 ```
 
-不要把真实简历、身份证件、私人联系方式、二维码图像、API 密钥或招聘账号信息放入已跟踪文件。
+如果使用者只使用普通 ChatGPT 而没有本地终端，仓库本身不会自动提供本地构建环境；此时可把 `README.md`、`AGENTS.md`、`skills/resume-workflow/SKILL.md` 和 `docs/` 作为项目资料上传，并让 Agent 明确说明它是否能运行本地命令。可直接复制使用的启动 prompt 见 [`docs/SHARE_PROMPT.md`](docs/SHARE_PROMPT.md)。
 
 ## 当前边界
 
